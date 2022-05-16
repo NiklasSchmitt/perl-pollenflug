@@ -1,0 +1,3 @@
+#!/bin/bash
+plackup /mnt/d/Programmierung/dancer/bin/app.psgi -p 3000 -R
+# plackup /opt/pollenflug/bin/app.psgi -p 3000 -R

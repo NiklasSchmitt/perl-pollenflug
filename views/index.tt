@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pollenflug</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" type="image/svg" href="img/erle_1.svg">
+</head>
+
+<body>
+	<div class="background">
+		<div class="container-fluid p-4 text-center">
+			<h1>Pollenflug</h1>
+			<p>last update: [% lastUpdate %] | next update: [% nextUpdate %]</p>
+			<p>[% error %]</p>
+			<hr>
+			<div class="table-responsive-sm text-center">
+				<table class="table table-dark table-hover table-sm">
+					<thead>
+						<tr>
+							<th scope="col">Region</th>
+							<th scope="col">Birke</th>
+							<th scope="col">Erle</th>
+							<th scope="col">Hasel</th>
+							<th scope="col">Esche</th>
+							<th scope="col">Gräser</th>
+							<th scope="col">Roggen</th>
+							<th scope="col">Beifuß</th>
+							<th scope="col">Ambrosia</th>
+						</tr>
+					</thead>
+						<tbody>
+							[% FOREACH entry IN tableData -%]
+								<tr>
+								<td>[% entry.partregion %]<p class="small">[% entry.region %]</p></td>
+								<td><img src="img/birke_[% entry.birke %].svg" title="[% entry.birkelegend %]" height="48px" width="48px"/></td>
+								<td><img src="img/erle_[% entry.erle %].svg" title="[% entry.erlelegend %]" height="48px" width="48px"/></td>
+								<td><img src="img/hasel_[% entry.hasel %].svg" title="[% entry.hasellegend %]" height="48px" width="48px"/></td>
+								<td><img src="img/esche_[% entry.esche %].svg" title="[% entry.eschelegend %]" height="48px" width="48px"/></td>
+								<td><img src="img/graeser_[% entry.graeser %].svg" title="[% entry.graeserlegend %]" height="48px" width="48px"/></td>
+								<td><img src="img/roggen_[% entry.roggen %].svg" title="[% entry.roggenlegend %]" height="48px" width="48px"/></td>
+								<td><img src="img/beifuss_[% entry.beifuss %].svg" title="[% entry.beifusslegend %]" height="48px" width="48px"/></td>
+								<td><img src="img/ambrosia_[% entry.ambrosia %].svg" title="[% entry.ambrosialegend %]" height="48px" width="48px"/></td>
+								</tr>
+							[% END -%]
+					</tbody>
+				</table>
+			<!--<a href="/refresh"><button type="button" class="btn btn-outline-info btn-sm p-1 fw-bold"><i style="color: inherit;" class="bi bi-arrow-repeat"></i> force-refresh</button></a>-->
+		</div>
+	</div>
+</body>
+</html>

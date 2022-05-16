@@ -1,0 +1,18 @@
+* {
+	color: #6c757d;
+}
+
+body {
+	background-color: #212529;
+}
+
+h1 {
+	color: white;
+}
+
+input[type=text]:focus {
+	border: 4px solid #0dcaf0;
+}
+.form-control:focus {
+	border: 4px solid #0dcaf0;
+}
