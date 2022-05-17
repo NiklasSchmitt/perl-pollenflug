@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 
-# Copyright Key-Systems GmbH
 package DANCER::Server;
 use strict;
 use warnings;
@@ -8,7 +7,6 @@ use Dancer2 appname => 'DANCER::Server';
 use Data::Dumper;
 use LWP::UserAgent;
 use JSON;
-use Cwd qw(cwd getcwd);
 
 set charset => 'utf8';
 
