@@ -1,17 +1,11 @@
-FROM ubuntu:latest
+FROM perl:5.34.1-slim-buster
 
-ENV DEBIAN_FRONTEND="noninteractive"
+RUN apt update && apt install -y libplack-perl libdancer2-perl libjson-perl unzip
 
-RUN apt update && apt install -y perl libplack-perl libdancer2-perl unzip
-
-# first bad solution: just copy from here into container
-#COPY --chown=root:root . .
-
-# second bad solution: download .zip from github and move around the container
 ADD https://github.com/NiklasSchmitt/perl-pollenflug/archive/refs/heads/master.zip /tmp
 RUN unzip /tmp/master.zip -d /opt && mv /opt/perl-pollenflug-master /opt/pollenflug
-RUN chmod +x /opt/pollenflug/bin/pollenflug && rm /tmp/master.zip
+RUN chmod +x /opt/pollenflug/bin/pollenflug && rm /tmp/master.zip && apt-get -y autoremove && apt-get clean
 
-EXPOSE 3000
+EXPOSE 3000/tcp
 
 ENTRYPOINT ["/opt/pollenflug/bin/pollenflug"]
