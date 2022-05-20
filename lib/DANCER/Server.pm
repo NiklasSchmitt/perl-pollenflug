@@ -28,7 +28,7 @@ get '/index' => sub {
 	$legend->{"1-2"} = "geringe bis mittlere Belastung";
 	$legend->{"2"} = "mittlere Belastung";
 	$legend->{"2-3"} = "mittlere bis hohe Belastung";
-	$legend->{"3"} = "keine Belastung";
+	$legend->{"3"} = "hohe Belastung";
 
 	my @tableData;
 
