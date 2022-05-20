@@ -11,5 +11,4 @@ RUN mv /opt/pollenflug/vhost-pollenflug.conf /etc/apache2/sites-available/pollen
 
 EXPOSE 80/tcp
 
-#ENTRYPOINT ["/opt/pollenflug/bin/pollenflug"]
-ENTRYPOINT ["/bin/bash"]
+CMD apachectl -D FOREGROUND
