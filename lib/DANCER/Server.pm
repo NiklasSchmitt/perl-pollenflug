@@ -14,10 +14,6 @@ set charset => 'utf8';
 # A file ./public/css/style.css is made available as http://example.com/css/style.css
 
 get '/' => sub {
-	redirect "/index";
-};
-
-get '/index' => sub {
 	my $lastUpdate = "n/a";
 	my $nextUpdate = "n/a";
 
@@ -78,12 +74,7 @@ get '/index' => sub {
 		template "index", {error => "error while requesting data from DWD: $response->status_line\n", lastUpdate => "n/a", nextUpdate => "n/a"};
 	}
 
-
 	template "index", {lastUpdate => $lastUpdate, nextUpdate => $nextUpdate, tableData => \@tableData};
 };
-
-# get '/refresh' => sub {
-# 	#todo new json request
-# };
 
 dance;
